@@ -1,0 +1,43 @@
+.rmdb-grid h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 42px;
+}
+
+.rmdb-grid-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    background-size: cover;
+    background: linear-gradient(to right, rgba(7, 61, 240, 0.068) 70%,rgba(86, 84, 95, 0.041)41%, rgba(26, 26, 27, 0.164)100%), #3844e633;
+    position: relative;
+}
+
+.rmdb-grid-element {
+    background: #353535;
+    max-height: 430px;
+    animation: animateGrid 0.5s;
+    overflow: hidden;
+}
+
+@keyframes animateGrid {
+    from {
+        opacity: 0;
+    } else {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .rmdb-grid-content {
+        grid-template-columns: auto auto;
+    }
+
+    .rmdb-grid-element:nth-child(2n+2) {
+        margin-right: 0;
+    }
+
+    .rmdb-grid-h1 {
+        font-size: 22px;
+    }
+}
