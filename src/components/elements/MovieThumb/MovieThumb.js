@@ -5,15 +5,14 @@ import './MovieThumb.css';
 
 const MovieThumb = (props) => {
     return (
-        <div className = "rmdb-moviethumb">
-            { props.clickable ? 
-              <Link to={{ pathname: `/${props.movieId}`, movieName: `${props.movieName}` }}> 
-                 <img src={props.image} alt="MovieThumb" />
-              </Link>
-                :
-                <img src={props.image} alt="MovieThumb" />
-            }
-        </div>
+        <div className="rmdb-moviethumb">
+    {/* You can send props via the Links "to" object. Here we create our own "movieName" */}
+      <Link to={{ pathname: `/${props.movieId}`,  movieName: `${props.movieName}`}}>
+        <img className="clickable" src={props.image} alt="moviethumb" />
+      </Link>
+      :
+      <img src={props.image} alt="moviethumb" />
+  </div>
     )
 }
 
